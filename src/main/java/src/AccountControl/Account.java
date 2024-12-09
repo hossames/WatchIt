@@ -1,7 +1,8 @@
 package src.AccountControl;
 import src.DataBase.DataObject;
 public class Account extends DataObject {
-    protected final String userName,firstName,lastName,email,password,FavoriteName;
+    protected final String userName,firstName,lastName,email,FavoriteName;
+    protected String password;
     protected Long ID;
     public static long cnt= 1;
     public Account(){
@@ -39,6 +40,9 @@ public class Account extends DataObject {
     }
     public String getPassword() {
         return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
     //--------------------------------------DataBase Methods-----------------------------------------//
     @Override

@@ -9,7 +9,7 @@ public class Model {
     public static DataBase db;
     private Model() {
         db = DataBase.getInstance();
-        view = new ViewFactory( false);
+        view = new ViewFactory();
     }
     public static Model getInstance() {
         if (model == null) {

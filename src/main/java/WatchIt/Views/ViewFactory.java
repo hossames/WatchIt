@@ -7,9 +7,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class ViewFactory {
-    boolean type;
+    public boolean type;
     public Stage PrimaryStage;
-    public ViewFactory(boolean type) {
+    public ViewFactory() {
         this.type = type;
         PrimaryStage = new Stage();
         PrimaryStage.initStyle(StageStyle.UNDECORATED);
@@ -22,6 +22,8 @@ public class ViewFactory {
             System.out.println("Error: while rendering view");
         }
         PrimaryStage.show();
-
+    }
+    public void setType(boolean type){
+        this.type = type;
     }
 }

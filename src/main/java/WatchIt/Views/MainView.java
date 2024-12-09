@@ -15,16 +15,25 @@ public class MainView {
     public static Scene getScene(FXMLLoader fxmlLoader){
         try{
             Scene scene = new Scene(fxmlLoader.load());
+            return scene;
         }catch (IOException e){
             System.out.println("Error: While Getting Scene");
-            e.printStackTrace();
+            System.out.println(e);
         }
+        return null;
     }
     public static FXMLLoader RegisterScene(){
         return null;
     }
     public static FXMLLoader ForgetScene(){
-        return null;
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(Application.class.getResource("/Fxml/Enter/ForgetPassword.fxml"));
+        return fxmlLoader;
+    }
+    public static FXMLLoader FavoriteNameScene(){
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(Application.class.getResource("/Fxml/Enter/CheckFavoriteName.fxml"));
+        return fxmlLoader;
     }
     public static FXMLLoader PasswordResetScene(){
         FXMLLoader fxmlLoader = new FXMLLoader();

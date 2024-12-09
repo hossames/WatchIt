@@ -1,4 +1,5 @@
 package src.DataBase;
+import WatchIt.Models.Model;
 import src.ContentControl.*;
 import src.AccountControl.*;
 import src.Cast.*;
@@ -14,7 +15,7 @@ public class DataBase {
     private static DataBase dataBase;
 
     // Regex Strings
-    final String EmailRegex = "[\\w-]+@(gmail|yahoo|outlook)\\.(com|org|io|net)",
+    public final String EmailRegex = "[\\w-]+@(gmail|yahoo|outlook)\\.(com|org|io|net)",
             PasswordRegex="^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*\\W)(?=.\\S+$).{8,}$";
 
     // Genre of Movies and Series
@@ -104,11 +105,12 @@ public class DataBase {
      * @return boolean that describe if Login is Successful or Failed (True -> Successful / False -> Failed)
      */
     public boolean Login(String Email,String Password){
-        if(usersData.getDataByString(Email,4).isEmpty()||
-           !usersData.getDataByString(Email,4).getFirst().getPassword().equals(Password)){
+        if(accountsData.getDataByString(Email,4).isEmpty()||
+           !accountsData.getDataByString(Email,4).getFirst().getPassword().equals(Password)){
             return false;
         }
-        CurrentUser = usersData.getDataByString(Email,4).getFirst();
+        CurrentUser = accountsData.getDataByString(Email,4).getFirst();
+        Model.getInstance().getViewFactory().setType(CurrentUser instanceof Admin);
         return true;
     }
 

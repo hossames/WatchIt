@@ -24,7 +24,7 @@
                </image>
             </ImageView>
             <TextField fx:id="Email" layoutX="328.0" layoutY="123.0" onKeyTyped="#GoToNext" prefHeight="26.0" prefWidth="221.0" promptText="Email" />
-            <Hyperlink fx:id="Forget" layoutX="449.0" layoutY="221.0" text="Forget Password ?" />
+            <Hyperlink fx:id="Forget" onMouseClicked="#Forget" layoutX="449.0" layoutY="221.0" text="Forget Password ?" />
             <Hyperlink fx:id="Register" layoutX="336.0" layoutY="313.0" text="Don't have Account ?" />
             <PasswordField fx:id="Password" layoutX="328.0" layoutY="192.0" onKeyTyped="#GoToNext" prefHeight="26.0" prefWidth="221.0" promptText="Password" />
             <Text id="HeadLine" layoutX="65.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WATCH IT" />
