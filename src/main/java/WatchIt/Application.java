@@ -15,12 +15,11 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) {
-        //DataBase.getInstance();
         Model.getInstance().getViewFactory().Show(MainView.LoginScene());
     }
 
     public static void main(String[] args) {
         launch();
-        //DataBase.getInstance().Save();
+        DataBase.getInstance().Save();
     }
 }

@@ -186,7 +186,7 @@ public class DataBase {
         String FavoriteName = input.next();
         System.out.println("Choose your Plan : ");
         for (i = 0 ;i<3;i++) {
-            System.out.println((i + 1) + "- " + Subscription.Plans[i] + "   |   " + Subscription.Prices[i] + "EGP/Year   |   " + Subscription.Descriptions[i]);
+            System.out.println((i + 1) + "- " + Subscription.plans[i] + "   |   " + Subscription.prices[i] + "EGP/Year   |   " + Subscription.descriptions[i]);
         }
         int Type;
         do

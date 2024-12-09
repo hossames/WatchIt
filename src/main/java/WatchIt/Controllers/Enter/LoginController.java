@@ -4,30 +4,27 @@ import WatchIt.Models.Model;
 import WatchIt.Views.MainView;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import src.DataBase.DataBase;
-
-import java.awt.*;
 import java.io.IOException;
-
 public class LoginController {
-    @FXML
+    // Fx Entities
     public BorderPane LoginPage;
     public TextField Email;
     public PasswordField Password;
     public Button LoginButton;
     public Hyperlink Register;
     public Hyperlink Forget;
+
+    //Variables
     double mousePressedX,mousePressedY;
+
+    //init Fx
     public void initialize() {
         try {
             LoginPage.setTop(MainView.TitleBar().load());
@@ -51,12 +48,16 @@ public class LoginController {
             }
         });
     }
+
+    //Enter transitions
     public void GoToNext(KeyEvent keyEvent){
         if(keyEvent.getCharacter().charAt(0)==System.lineSeparator().charAt(0)&&Password.isFocused())
             Login();
         if(keyEvent.getCharacter().charAt(0)==System.lineSeparator().charAt(0))
             Password.requestFocus();
     }
+
+    //Login Check
     public void Login(){
         if(DataBase.getInstance().Login(Email.getText(),Password.getText()))
             System.out.println("Login Successful");
@@ -69,5 +70,14 @@ public class LoginController {
         }
     }
 
+    //Register Page
+    public void Register(){
+
+    }
+
+    //Forget PasswordPage
+    public void Forget(){
+
+    }
 }
 
