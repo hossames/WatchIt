@@ -2,6 +2,7 @@ package WatchIt.Controllers.Account.Admin;
 
 import WatchIt.Models.Model;
 import WatchIt.Views.AdminView;
+import WatchIt.Views.MainView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,32 +14,45 @@ import javafx.scene.layout.Pane;
 import java.io.IOException;
 
 public class AdminMenuController {
-
+    public AdminMenuController(FXMLLoader fxmlLoader)  {
+        this.fxmlLoader = fxmlLoader;
+    }
+    FXMLLoader fxmlLoader;
     @FXML
-    private BorderPane borderPane;
-
+    public void initialize(){
+        addToCenter(fxmlLoader);
+    }
     @FXML
-    void goToMovieController(MouseEvent event) throws IOException {
+    public BorderPane borderPane;
+    @FXML
+    void goToEpisidesController(MouseEvent event)  {
+       //addToCenter(AdminView.MovieControllerScene());
+    }
+    @FXML
+    void goToDashboardController(MouseEvent event)  {
+       //addToCenter(AdminView.MovieControllerScene());
+    }
+    @FXML
+    void goToMovieController(MouseEvent event) {
        addToCenter(AdminView.MovieControllerScene());
     }
 
     @FXML
-    void goToSeriesController(MouseEvent event) throws IOException {
+    void goToSeriesController(MouseEvent event)  {
       //  addToCenter(AdminView.SeriesControllerScene());
     }
 
     @FXML
-    void goToUserController(MouseEvent event) throws IOException {
+    void goToUserController(MouseEvent event)  {
         //addToCenter(AdminView.UserControllerScene());
     }
-    private void addToCenter(FXMLLoader loader) throws IOException {
-        Pane pane = null;
+    public  void  addToCenter(FXMLLoader loader) {
+
         try {
-            pane = loader.load();
+            borderPane.setCenter(loader.load());
+            borderPane.setTop(MainView.TitleBar().load());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        borderPane.setCenter(pane);
     }
-
 }

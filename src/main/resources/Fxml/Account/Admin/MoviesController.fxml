@@ -8,8 +8,8 @@
    <children>
       <VBox layoutX="250.0" layoutY="124.0" prefHeight="100.0" prefWidth="100.0" spacing="50.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: Black;" text="Add Movie" textFill="#ffbf00" />
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: Black;" text="Remove Movie" textFill="#ffbf00" />
+            <Button mnemonicParsing="false" onMouseClicked="#goToAddMovie" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: Black;" text="Add Movie" textFill="#ffbf00" />
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToRemoveMovie" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: Black;" text="Remove Movie" textFill="#ffbf00" />
          </children>
       </VBox>
    </children>

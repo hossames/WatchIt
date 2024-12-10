@@ -19,6 +19,7 @@ public class ViewFactory {
             Scene scene = new Scene(ShowingScene.load());
             PrimaryStage.setScene(scene);
         }catch (Exception e){
+            e.printStackTrace();
             System.out.println("Error: while rendering view");
         }
         PrimaryStage.show();

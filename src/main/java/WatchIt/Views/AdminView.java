@@ -1,15 +1,22 @@
 package WatchIt.Views;
 
 import WatchIt.Application;
+import WatchIt.Controllers.Account.Admin.AdminMenuController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 import java.io.IOException;
 
 public class AdminView {
-    public static FXMLLoader AdminMenuControllerScene() {
+    public static FXMLLoader AdminMenuControllerScene(FXMLLoader fxmlLoader1) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(Application.class.getResource("/Fxml/Account/Admin/Controller.fxml"));
+        fxmlLoader.setController(new AdminMenuController(fxmlLoader1));
+        return fxmlLoader;
+    }
+    public static FXMLLoader AddMovieControllerScene() {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(Application.class.getResource("/Fxml/Account/Admin/AddMovie.fxml"));
         return fxmlLoader;
     }
     public static FXMLLoader MovieControllerScene() {
