@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Account.Admin.MovieController">
+   <children>
+      <VBox layoutX="250.0" layoutY="124.0" prefHeight="100.0" prefWidth="100.0" spacing="50.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: Black;" text="Add Movie" textFill="#ffbf00" />
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: Black;" text="Remove Movie" textFill="#ffbf00" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

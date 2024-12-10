@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox prefHeight="26.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Utils.TitleBarController">
+   <children>
+      <AnchorPane prefHeight="26.0" prefWidth="612.0" style="-fx-background-color: black;">
+         <children>
+            <FontAwesomeIcon fill="#ffd800" glyphName="CLOSE" layoutX="559.0" layoutY="23.0" onMouseClicked="#CloseButton" size="2em" text="" wrappingWidth="30.228620529174805" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
