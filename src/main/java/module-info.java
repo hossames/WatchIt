@@ -2,7 +2,7 @@ module watchit {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
-    requires fontawesomefx;
+  //  requires fontawesomefx;
     requires java.desktop;
     exports WatchIt;
     opens WatchIt.Controllers.Enter to javafx.fxml;
