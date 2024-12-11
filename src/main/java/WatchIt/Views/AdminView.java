@@ -24,6 +24,11 @@ public class AdminView {
         fxmlLoader.setLocation(Application.class.getResource("/Fxml/Account/Admin/MoviesController.fxml"));
         return fxmlLoader;
     }
+    public static FXMLLoader UserControllerScene() {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(Application.class.getResource("/Fxml/Account/Admin/editUser.fxml"));
+        return fxmlLoader;
+    }
     public static Scene getScene(FXMLLoader fxmlLoader){
         try{
             Scene scene = new Scene(fxmlLoader.load());

@@ -44,7 +44,7 @@ public class AdminMenuController {
 
     @FXML
     void goToUserController(MouseEvent event)  {
-        //addToCenter(AdminView.UserControllerScene());
+        addToCenter(AdminView.UserControllerScene());
     }
     public  void  addToCenter(FXMLLoader loader) {
 
