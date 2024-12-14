@@ -1,26 +1,25 @@
 package WatchIt.Controllers.Enter;
 
 import WatchIt.Models.Model;
+import WatchIt.Views.AdminView;
 import WatchIt.Views.ClientView;
 import WatchIt.Views.MainView;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import src.AccountControl.Admin;
+import src.AccountControl.User;
 import src.DataBase.DataBase;
 import java.io.IOException;
+
 public class LoginController {
     // Fx Entities
     public BorderPane LoginPage;
     public TextField Email;
     public PasswordField Password;
-    public Button LoginButton;
-    public Hyperlink Register;
-    public Hyperlink Forget;
 
     //Variables
     double mousePressedX,mousePressedY;
@@ -32,22 +31,6 @@ public class LoginController {
         }catch (IOException e){
             e.printStackTrace();
         }
-        LoginPage.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                mousePressedX = mouseEvent.getX();
-                mousePressedY = mouseEvent.getY();
-            }
-        });
-        LoginPage.addEventFilter(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                double crrX = mouseEvent.getScreenX();
-                double crrY = mouseEvent.getScreenY();
-                Model.getInstance().getViewFactory().PrimaryStage.setX(crrX - mousePressedX);
-                Model.getInstance().getViewFactory().PrimaryStage.setY(crrY - mousePressedY);
-            }
-        });
     }
 
     //Enter transitions
@@ -62,7 +45,12 @@ public class LoginController {
     public void Login(){
         if(DataBase.getInstance().Login(Email.getText(),Password.getText())) {
             System.out.println("Login Successful");
-            Model.getInstance().getViewFactory().Show(ClientView.ClientMenuControllerScene());
+            if(DataBase.getInstance().CurrentUser instanceof Admin)
+                System.out.println("Admin logged in");
+            else
+            {
+                System.out.println("User logged in");
+            }
         }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -75,13 +63,12 @@ public class LoginController {
 
     //Register Page
     public void Register(){
-
+        Model.getInstance().getViewFactory().Show(MainView.RegisterScene());
     }
 
     //Forget PasswordPage
     public void Forget(){
-        CheckFavoriteNameController.Email = Email.getText();
-        Model.getInstance().getViewFactory().Show(MainView.FavoriteNameScene());
+        Model.getInstance().getViewFactory().Show(MainView.FavoriteNameScene(Email.getText()));
     }
 }
 
