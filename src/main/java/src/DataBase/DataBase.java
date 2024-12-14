@@ -105,7 +105,7 @@ public class DataBase {
      */
     public boolean Login(String Email,String Password){
         if(accountsData.getDataByString(Email,4).isEmpty()||
-           !accountsData.getDataByString(Email,4).getFirst().getPassword().equals(Password)){
+                !accountsData.getDataByString(Email,4).getFirst().getPassword().equals(Password)){
             return false;
         }
         CurrentUser = accountsData.getDataByString(Email,4).getFirst();

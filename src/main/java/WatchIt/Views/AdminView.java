@@ -2,8 +2,10 @@ package WatchIt.Views;
 
 import WatchIt.Application;
 import WatchIt.Controllers.Account.Admin.AdminMenuController;
+import WatchIt.Controllers.Content.ContentCardController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import src.DataBase.DataObject;
 
 import java.io.IOException;
 
@@ -39,4 +41,5 @@ public class AdminView {
         }
         return null;
     }
+
 }
