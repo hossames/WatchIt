@@ -18,12 +18,9 @@ import java.util.List;
 public class CheckFavoriteNameController{
 
     public TextField FAVNAME;
+    public Button SubmitButton;
     public BorderPane CheckFavoriteNameBorderPane;
-    public String Email;
-
-    public CheckFavoriteNameController(String Email){
-        this.Email = Email;
-    }
+    public static String Email;
     //Variables
     double mousePressedX,mousePressedY;
     //init Fx
@@ -33,6 +30,22 @@ public class CheckFavoriteNameController{
         }catch (IOException e){
             e.printStackTrace();
         }
+        CheckFavoriteNameBorderPane.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                mousePressedX = mouseEvent.getX();
+                mousePressedY = mouseEvent.getY();
+            }
+        });
+        CheckFavoriteNameBorderPane.addEventFilter(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                double crrX = mouseEvent.getScreenX();
+                double crrY = mouseEvent.getScreenY();
+                Model.getInstance().getViewFactory().PrimaryStage.setX(crrX - mousePressedX);
+                Model.getInstance().getViewFactory().PrimaryStage.setY(crrY - mousePressedY);
+            }
+        });
     }
 
     //Enter transitions
@@ -51,7 +64,7 @@ public class CheckFavoriteNameController{
             alert.setContentText("Email not found");
             alert.showAndWait();
         } else if (list.getFirst().getFavoriteName().equals(FAVNAME.getText())) {
-            Model.getInstance().getViewFactory().Show(MainView.ForgetScene(Email));
+            Model.getInstance().getViewFactory().Show(MainView.ForgetScene());
         } else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Favorite Name Error");
@@ -61,7 +74,4 @@ public class CheckFavoriteNameController{
         }
     }
 
-    public void Login(MouseEvent mouseEvent) {
-        Model.getInstance().getViewFactory().Show(MainView.LoginScene());
-    }
 }
