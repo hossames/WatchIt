@@ -1,5 +1,10 @@
 package src.Engines;
-import src.ContentControl.*;
+
+import src.AccountControl.User;
+import src.ContentControl.Content;
+import src.ContentControl.Movie;
+import src.ContentControl.Series;
+import src.DataBase.DataBase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +14,9 @@ public class RecommendationEngine {
     private Content[] content;
     public Content[] trending;
 
-    public RecommendationEngine(List<String> favouriteGenres, Content[] content) {
-        this.favouriteGenres = favouriteGenres;
-        this.content = content;
+    public RecommendationEngine() {
+        this.favouriteGenres = ((User) DataBase.getInstance().CurrentUser).getFavoriteGenres();
+        this.content = DataBase.contentsData.getData().toArray(new Content[0]);
     }
 
     public List<Movie> getMovieBasedRecommendations() {

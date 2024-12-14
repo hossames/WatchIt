@@ -17,11 +17,13 @@ import java.io.IOException;
 
 public class ForgetPasswordController {
 
-    public Button SubmitButton;
     public BorderPane ForgetPasswordBorderPane;
     public PasswordField ReEnterPassword;
     public PasswordField newPassword;
-
+    String Email;
+    public ForgetPasswordController(String Email) {
+        this.Email = Email;
+    }
     //Variables
     double mousePressedX,mousePressedY;
 
@@ -32,22 +34,6 @@ public class ForgetPasswordController {
         }catch (IOException e){
             e.printStackTrace();
         }
-        ForgetPasswordBorderPane.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                mousePressedX = mouseEvent.getX();
-                mousePressedY = mouseEvent.getY();
-            }
-        });
-        ForgetPasswordBorderPane.addEventFilter(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                double crrX = mouseEvent.getScreenX();
-                double crrY = mouseEvent.getScreenY();
-                Model.getInstance().getViewFactory().PrimaryStage.setX(crrX - mousePressedX);
-                Model.getInstance().getViewFactory().PrimaryStage.setY(crrY - mousePressedY);
-            }
-        });
     }
 
     //Enter transitions
@@ -69,12 +55,12 @@ public class ForgetPasswordController {
         }
         else if(newPassword.getText().equals(ReEnterPassword.getText())){
             DataBase db = DataBase.getInstance();
-            Account user = DataBase.accountsData.getDataByString(CheckFavoriteNameController.Email,4).getFirst();
+            Account user = DataBase.accountsData.getDataByString(Email,4).getFirst();
             user.setPassword(newPassword.getText());
             if(user instanceof Admin){
-                db.adminsData.getDataByString(CheckFavoriteNameController.Email,4).getFirst().setPassword(newPassword.getText());
+                db.adminsData.getDataByString(Email,4).getFirst().setPassword(newPassword.getText());
             }else{
-                db.usersData.getDataByString(CheckFavoriteNameController.Email,4).getFirst().setPassword(newPassword.getText());
+                db.usersData.getDataByString(Email,4).getFirst().setPassword(newPassword.getText());
             }
             Model.getInstance().getViewFactory().Show(MainView.LoginScene());
         }
@@ -85,6 +71,9 @@ public class ForgetPasswordController {
             alert.setContentText("Passwords do not match");
             alert.showAndWait();
         }
+    }
+    public void Login(MouseEvent mouseEvent) {
+        Model.getInstance().getViewFactory().Show(MainView.LoginScene());
     }
 
 }
