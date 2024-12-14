@@ -1,4 +1,6 @@
 package src.DataBase;
+import javafx.scene.image.Image;
+
 import java.util.Date;
 
 public class DataObject {
@@ -13,4 +15,8 @@ public class DataObject {
     public void DisplayLine(){}
 
     public void DisplayHeadLine(){}
+
+    public Image getImage() {
+        return null;
+    }
 }
