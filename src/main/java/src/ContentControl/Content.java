@@ -80,6 +80,9 @@ public class Content extends DataObject {
         return (Rate_Sum/RateCounter);
     }
     //--------------------------------------DataBase Methods-----------------------------------------//
+    public Image getImage() {
+        return poster;
+    }
     @Override
     public Long getId(int op){
         return contentID;

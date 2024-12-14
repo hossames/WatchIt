@@ -5,7 +5,7 @@ import WatchIt.Views.AdminView;
 import WatchIt.Views.ClientView;
 import WatchIt.Views.MainView;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import javafx.stage.Stage;
 import src.AccountControl.User;
 import src.ContentControl.Movie;

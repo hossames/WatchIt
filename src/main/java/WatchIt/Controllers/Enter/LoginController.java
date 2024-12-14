@@ -44,12 +44,15 @@ public class LoginController {
     //Login Check
     public void Login(){
         if(DataBase.getInstance().Login(Email.getText(),Password.getText())) {
+
             System.out.println("Login Successful");
             if(DataBase.getInstance().CurrentUser instanceof Admin)
                 System.out.println("Admin logged in");
             else
             {
                 System.out.println("User logged in");
+                Model.getInstance().getViewFactory().Show(ClientView.ClientMenuControllerScene());
+
             }
         }
         else{
