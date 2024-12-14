@@ -2,13 +2,18 @@ package WatchIt.Controllers.Account.Client;
 
 import WatchIt.Views.ClientView;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+import src.ContentControl.Content;
 import src.ContentControl.Movie;
+import src.ContentControl.Series;
 import src.DataBase.DataObject;
 import src.Engines.RecommendationEngine;
 
@@ -44,17 +49,21 @@ public class ClientController {
     HBox SeriesHBox;
     public void AddItemToHBox() {
         RecommendationEngine recommendationEngine = new RecommendationEngine();
-        List Movies =  recommendationEngine.getMovieBasedRecommendations();
-        List Series =  recommendationEngine.getSeriesBasedRecommendations();
+        List <Movie> Movies =  recommendationEngine.getMovieBasedRecommendations();
+        List <Series> Series =  recommendationEngine.getSeriesBasedRecommendations();
         for (int i = 0; i < 10; i++) {
             try {
                 if(i < Movies.size()) {
                     System.out.println(Movies.size());
-                    Node NodeMovies = ClientView.ContentCard((DataObject) Movies.get(i)).load();
+                    Content movie = Movies.get(i);
+                    Node NodeMovies = ClientView.ContentCard(movie).load();
+                    NodeMovies.setOnMouseClicked(event -> handlePosterClick(movie, event));
                     MoviesHBox.getChildren().add(NodeMovies);
                 }
                 if(i < Series.size()) {
-                    Node NodeSeries = ClientView.ContentCard((DataObject) Series.get(i)).load();
+                    Series series = Series.get(i);
+                    Node NodeSeries = ClientView.ContentCard(series).load();
+                    //NodeSeries.setOnMouseClicked(event -> handlePosterClick(series, event));
                     SeriesHBox.getChildren().add(NodeSeries);
                 }
             }
@@ -65,15 +74,19 @@ public class ClientController {
             }
         }
     }
-    //-----------------------------------------------------------//
+    private void handlePosterClick(Content movie, MouseEvent event) {
+        try {
+            FXMLLoader loader = ClientView.ContentMenu(movie);
+            Parent content = loader.load();
 
-//            Label newLabel = new Label("New Node");
-//            hbox.getChildren().add(newLabel);
-//    List nodelist = new ArrayList();
-//    public void getData(List<DataObject> dataList) {
-//        nodelist = dataList;
-//    }
-//    RecommendationEngine recommendationEngine;
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.getScene().setRoot(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error loading movie menu: " + e.getMessage());
+        }
+    }
+    //-----------------------------------------------------------//
 
 }
 

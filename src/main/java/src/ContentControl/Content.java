@@ -36,6 +36,8 @@ public class Content extends DataObject {
         this.budget = budget;
         this.revenue = revenue;
         Rate_Sum = 0;
+        System.out.println("/Images/" + contentTitle + ".jpg");
+
         poster = new Image(Objects.requireNonNull(Application.class.getResourceAsStream("/Images/" + contentTitle + ".jpg")));
         for(WatchRecord Record: DataBase.watchRecordData.getDataByString(contentTitle,0)){
             Rate_Sum += Record.Rating;
@@ -56,6 +58,8 @@ public class Content extends DataObject {
         this.budget = budget;
         this.revenue = revenue;
         Rate_Sum = 0;
+        System.out.println("/Images/" + contentTitle + ".jpg");
+
         poster = new Image(Objects.requireNonNull(Application.class.getResourceAsStream("/Images/" + contentTitle + ".jpg")));
         for(WatchRecord Record: DataBase.watchRecordData.getDataByString(contentTitle,0)){
             Rate_Sum += Record.Rating;

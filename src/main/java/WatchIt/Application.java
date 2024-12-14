@@ -22,7 +22,6 @@ public class Application extends javafx.application.Application {
 
         //Client
 //         Model.getInstance().getViewFactory().Show(ClientView.ClientMenuControllerScene());
-
     }
 
     public static void main(String[] args) {

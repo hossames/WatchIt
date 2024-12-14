@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="WatchIt.Controllers.Content.MovieController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="656.0" prefWidth="866.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="poster" fitHeight="246.0" fitWidth="206.0" layoutX="175.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/Poster.jpg" />
+         </image></ImageView>
+      <VBox layoutX="397.0" layoutY="55.0" prefHeight="246.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <Label text="Content Name" textFill="WHITE" />
+            <Label text="Language" textFill="WHITE" />
+            <Label text="Duration" textFill="WHITE" />
+            <Label text="Country" textFill="WHITE" />
+            <Label text="Release Date" textFill="WHITE" />
+            <Label text="Genres" textFill="WHITE" />
+            <Label text="Views" textFill="WHITE" />
+            <Label text="Rate" textFill="WHITE" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="490.0" layoutY="55.0" prefHeight="246.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <Label fx:id="ContentName" text="-----" textFill="#c9e512fd" />
+            <Label fx:id="Language" text="-----" textFill="#c9e512fd" />
+            <Label fx:id="Duration" text="-----" textFill="#c9e512fd" />
+            <Label fx:id="Country" text="-----" textFill="#c9e512fd" />
+            <Label fx:id="ReleaseDate" text="-----" textFill="#c9e512fd" />
+            <Label fx:id="Genres" text="-----" textFill="#c9e512fd" />
+            <Label fx:id="Views" text="-----" textFill="#c9e512fd" />
+            <Label fx:id="Rate" text="-----" textFill="#c9e512fd" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="643.0" prefWidth="164.0" style="-fx-background-color: #070807;">
+         <padding>
+            <Insets bottom="50.0" left="10.0" top="10.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/logo.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: F4A005FF;" text="Movies">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: F4A005FF;" text="Series">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <TextField layoutX="297.0" layoutY="14.0" prefHeight="26.0" prefWidth="357.0" style="-fx-background-color: F4A005FF;" text="Search" />
+   </children>
 </AnchorPane>

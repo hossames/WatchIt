@@ -35,12 +35,12 @@
          </children></VBox>
       <ScrollPane layoutX="163.0" layoutY="76.0" prefHeight="259.0" prefWidth="726.0" style="-fx-background-color: #070807;">
          <content>
-            <HBox fx:id="MoviesHBox" prefHeight="200.0" prefWidth="1563.0" />
+            <HBox fx:id="MoviesHBox" prefHeight="244.0" prefWidth="1568.0" spacing="10.0" style="-fx-background-color: #2b2b2b;" />
          </content>
       </ScrollPane>
       <ScrollPane layoutX="163.0" layoutY="348.0" prefHeight="259.0" prefWidth="726.0">
          <content>
-            <HBox fx:id="SeriesHBox" prefHeight="200.0" prefWidth="1563.0" />
+            <HBox fx:id="SeriesHBox" prefHeight="242.0" prefWidth="1570.0" spacing="10.0" style="-fx-background-color: #2b2b2b;" />
          </content>
       </ScrollPane>
       <TextField fx:id="field" layoutX="164.0" layoutY="31.0" prefHeight="26.0" prefWidth="292.0" promptText="Enter Title" />
