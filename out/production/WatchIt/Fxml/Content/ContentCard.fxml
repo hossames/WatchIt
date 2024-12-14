@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="351.0" prefWidth="234.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Content.ContentCardController">
+   <children>
+      <ImageView fx:id="poster" fitHeight="287.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="ContentName" layoutX="23.0" layoutY="298.0" prefHeight="18.0" prefWidth="186.0" text="Label" />
+   </children>
+</AnchorPane>

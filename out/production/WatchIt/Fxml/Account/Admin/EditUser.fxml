@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Account.Admin.UserController">
+   <children>
+      <ListView fx:id="list" prefHeight="680.0" prefWidth="423.0" />
+      <FontAwesomeIcon fill="#72ea10" glyphName="PLUS" layoutX="495.0" layoutY="347.0" onMouseClicked="#addAdmin" scaleX="5.0" scaleY="5.0" text="" wrappingWidth="9.428571701049805" />
+      <FontAwesomeIcon fill="#ff5757" glyphName="REMOVE" layoutX="618.0" layoutY="345.0" onMouseClicked="#removeUser" scaleX="5.0" scaleY="5.0" text="" />
+   </children>
+</AnchorPane>
