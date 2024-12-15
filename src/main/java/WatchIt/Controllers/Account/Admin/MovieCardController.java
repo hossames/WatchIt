@@ -28,9 +28,11 @@ public class MovieCardController {
 
     @FXML
     private FontAwesomeIcon s1;
-   @FXML
+
+    @FXML
     private FontAwesomeIcon s2;
-   @FXML
+
+    @FXML
     private FontAwesomeIcon s3;
 
     @FXML
