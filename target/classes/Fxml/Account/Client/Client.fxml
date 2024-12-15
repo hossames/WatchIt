@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -9,10 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="914.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Account.Client.ClientController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="947.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Account.Client.ClientController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="-1.0" prefHeight="643.0" prefWidth="164.0" style="-fx-background-color: #070807;">
+      <VBox alignment="TOP_CENTER" layoutX="-1.0" prefHeight="825.0" prefWidth="164.0" style="-fx-background-color: #070807;">
          <padding>
             <Insets bottom="50.0" left="10.0" top="10.0" />
          </padding>
@@ -33,17 +35,35 @@
                </VBox.margin>
             </Button>
          </children></VBox>
-      <ScrollPane layoutX="163.0" layoutY="76.0" prefHeight="259.0" prefWidth="726.0" style="-fx-background-color: #070807;">
-         <content>
-            <HBox fx:id="MoviesHBox" prefHeight="244.0" prefWidth="1568.0" spacing="10.0" style="-fx-background-color: #2b2b2b;" />
-         </content>
-      </ScrollPane>
-      <ScrollPane layoutX="163.0" layoutY="348.0" prefHeight="259.0" prefWidth="726.0">
-         <content>
-            <HBox fx:id="SeriesHBox" prefHeight="242.0" prefWidth="1570.0" spacing="10.0" style="-fx-background-color: #2b2b2b;" />
-         </content>
-      </ScrollPane>
       <TextField fx:id="field" layoutX="164.0" layoutY="31.0" prefHeight="26.0" prefWidth="292.0" promptText="Enter Title" />
       <Button fx:id="Button" layoutX="457.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#SearchButton" style="-fx-background-color: F4A005FF;" text="Search" />
+      <ScrollPane layoutX="162.0" layoutY="86.0" prefHeight="751.0" prefWidth="788.0" style="-fx-background-color: #2b2b2b;">
+         <content>
+            <AnchorPane prefHeight="900.0" prefWidth="724.0" style="-fx-background-color: #2b2b2b;">
+               <children>
+                  <ScrollPane layoutY="54.0" prefHeight="271.0" prefWidth="772.0" style="-fx-background-color: #070807;">
+                     <content>
+                        <HBox fx:id="MoviesHBox" prefHeight="254.0" prefWidth="772.0" spacing="10.0" style="-fx-background-color: #2b2b2b;" />
+                     </content>
+                  </ScrollPane>
+                  <ScrollPane layoutY="418.0" prefHeight="271.5" prefWidth="772.0">
+                     <content>
+                        <HBox fx:id="SeriesHBox" prefHeight="254.0" prefWidth="772.0" spacing="10.0" style="-fx-background-color: #2b2b2b;" />
+                     </content>
+                  </ScrollPane>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" text="Recomendation Movies" textAlignment="CENTER" textFill="#f4a005">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="375.0" prefHeight="35.0" prefWidth="266.0" text="Recomendation Series" textAlignment="CENTER" textFill="#f4a005">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

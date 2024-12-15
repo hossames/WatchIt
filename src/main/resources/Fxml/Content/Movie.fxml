@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -7,7 +8,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="656.0" prefWidth="866.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -39,12 +42,12 @@
             <Label fx:id="Rate" text="-----" textFill="#c9e512fd" />
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" prefHeight="643.0" prefWidth="164.0" style="-fx-background-color: #070807;">
+      <VBox alignment="TOP_CENTER" prefHeight="656.0" prefWidth="164.0" style="-fx-background-color: #070807;">
          <padding>
             <Insets bottom="50.0" left="10.0" top="10.0" />
          </padding>
          <children>
-            <ImageView fitHeight="49.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Watchit_logo" fitHeight="49.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/logo.png" />
                </image>
@@ -62,5 +65,34 @@
          </children>
       </VBox>
       <TextField layoutX="297.0" layoutY="14.0" prefHeight="26.0" prefWidth="357.0" style="-fx-background-color: F4A005FF;" text="Search" />
+      <HBox layoutX="175.0" layoutY="304.0" prefHeight="36.0" prefWidth="164.0" spacing="3.0">
+         <children>
+            <FontAwesomeIcon fx:id="Star1" fill="#d5ec00de" glyphName="STAR" size="3em">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fx:id="Star2" fill="#d5ec00de" glyphName="STAR" size="3em">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fx:id="Star3" fill="#d5ec00de" glyphName="STAR" size="3em">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fx:id="Star4" fill="#d5ec00de" glyphName="STAR" size="3em">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fx:id="Star5" fill="#d5ec00de" glyphName="STAR" size="3em">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </FontAwesomeIcon>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -1,9 +1,12 @@
 package WatchIt.Controllers.Content;
 
+import WatchIt.Models.Model;
+import WatchIt.Views.ClientView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import src.ContentControl.Content;
 import src.ContentControl.Movie;
 import src.DataBase.DataObject;
@@ -17,7 +20,7 @@ public class MovieController {
     @FXML
     Label ContentName, Language, Duration, Country, ReleaseDate, Genres, Views, Rate;
     @FXML
-    ImageView poster;
+    ImageView poster, Watchit_logo;
 
     Content movie;
 
@@ -41,8 +44,12 @@ public class MovieController {
         }catch (Exception e){
             System.out.println("nulllllllllll");
         }
+        Clentmenu();
     }
 
+    public void Clentmenu() {
+        Watchit_logo.setOnMousePressed(event -> Model.getInstance().getViewFactory().Show(ClientView.ClientMenuControllerScene()));
+    }
 
 
 

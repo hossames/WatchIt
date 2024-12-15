@@ -10,8 +10,8 @@ import src.DataBase.DataBase;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) {
-      // Model.getInstance().getViewFactory().Show(MainView.LoginScene());
-        Model.getInstance().getViewFactory().Show(AccountView.AccountController(DataBase.getInstance().usersData.getDataById((long)1)));
+       Model.getInstance().getViewFactory().Show(MainView.LoginScene());
+//        Model.getInstance().getViewFactory().Show(AccountView.AccountController(DataBase.getInstance().usersData.getDataById((long)1)));
        // Model.getInstance().getViewFactory().Show(AdminView.AdminMenuControllerScene(AdminView.UserControllerScene()));
     }
 
