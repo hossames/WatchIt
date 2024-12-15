@@ -1,15 +1,33 @@
 package WatchIt.Controllers.Account.Admin;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import src.Cast.CastMember;
+import src.DataBase.DataBase;
 
-public class AddSeriesFormController {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
+public class AddSeriesFormController implements Initializable {
+    
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        genres.getItems().addAll(
+                "Action", "Adventure", "Comedy", "Drama", "Horror",
+                "Romance", "Science Fiction", "Fantasy", "Mystery",
+                "Thriller", "Documentary", "Animation", "Family",
+                "Musical", "Crime", "Historical", "War", "Western");
+        ArrayList<CastMember> Cast = (ArrayList<CastMember>) DataBase.getInstance().castMemberData.getData();
+        Cast.stream()
+                .forEach(cast->castMembers.getItems().add(cast.firstName+" "+cast.lastName));
+    }
     @FXML
     private Button add_btn;
 
@@ -23,7 +41,7 @@ public class AddSeriesFormController {
     private TextField budget;
 
     @FXML
-    private ChoiceBox<?> castMembers;
+    private ChoiceBox<String> castMembers;
 
     @FXML
     private TextField country;
@@ -38,7 +56,7 @@ public class AddSeriesFormController {
     private DatePicker first_date;
 
     @FXML
-    private ChoiceBox<?> genres;
+    private ChoiceBox<String> genres;
 
     @FXML
     private TextField id;
