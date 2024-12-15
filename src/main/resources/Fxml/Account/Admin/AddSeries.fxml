@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" stylesheets="" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Account.Admin.AddSeriesFormController">
+    <children>
+        <Label layoutX="83.0" layoutY="14.0" text="Add Series">
+            <font>
+                <Font name="System Bold" size="38.0" />
+            </font>
+        </Label>
+        <VBox layoutX="83.0" layoutY="86.0" prefHeight="275.0" prefWidth="507.0" spacing="10.0">
+            <children>
+            <TextField fx:id="id" prefHeight="50.0" prefWidth="507.0" promptText="Series Title" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+                <TextField fx:id="num_of_episodes" prefHeight="23.0" prefWidth="507.0" promptText="Number of Episodes" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+                <TextField fx:id="duration" layoutX="10.0" layoutY="10.0" promptText="Duration of Episode" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+                <TextField fx:id="num_of_seasons" layoutX="10.0" layoutY="39.0" prefHeight="29.0" prefWidth="642.0" promptText="Number of Seasons" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+                <TextField fx:id="country" layoutX="10.0" layoutY="96.0" promptText="Country" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+                <TextField fx:id="budget" layoutX="10.0" layoutY="125.0" promptText="Budget" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+                <TextField fx:id="revenue" layoutX="10.0" layoutY="154.0" promptText="Revenue" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+            <TextField fx:id="director" promptText="Director" style="-fx-background-color: tranparent; -fx-border-color: transparent transparent  #f4a005 transparent; -fx-border-width: 0 0 3 0;" />
+            </children>
+        </VBox>
+        <Button id="btn" fx:id="add_btn" layoutX="83.0" layoutY="598.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: transparent; -fx-border-color: orange; -fx-border-width: 2px; -fx-border-radius: 5px; -fx-text-fill: orange; -fx-cursor: hand;" styleClass="btn" text="Add" textFill="#ab6832">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <CheckBox fx:id="is_going" layoutX="255.0" layoutY="569.0" mnemonicParsing="false" style="-fx-border-radius: 5px; -fx-text-fill: orange; -fx-background-color: transparent; -fx-font-size: 14px;" text="Is it ongoing?" />
+      <DatePicker fx:id="first_date" layoutX="83.0" layoutY="415.0" prefHeight="26.0" prefWidth="214.0" promptText="First Air Date" />
+      <DatePicker fx:id="last_date" layoutX="372.0" layoutY="415.0" prefHeight="26.0" prefWidth="214.0" promptText="Last Air Date" />
+      <ChoiceBox fx:id="genres" layoutX="83.0" layoutY="467.0" prefWidth="150.0" />
+      <Button fx:id="add_genre" layoutX="310.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#addGenre" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #f4a005;" text="Add Genre" textFill="WHITE" />
+      <ChoiceBox fx:id="castMembers" layoutX="83.0" layoutY="522.0" prefWidth="150.0" />
+      <Button fx:id="add_cast_member" layoutX="310.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#addCastMember" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: #f4a005;" text="Add Cast Member" textFill="WHITE" />
+    </children>
+</AnchorPane>
