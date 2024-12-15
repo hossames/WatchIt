@@ -1,7 +1,7 @@
 package WatchIt.Controllers.Account.Admin;
 
 import WatchIt.Views.AdminView;
-//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -26,20 +26,20 @@ public class MovieCardController {
     @FXML
     private Label movieName;
 
-    //@FXML
-    //private FontAwesomeIcon s1;
+    @FXML
+    private FontAwesomeIcon s1;
 
-   //@FXML
-    //private FontAwesomeIcon s2;
+    @FXML
+    private FontAwesomeIcon s2;
 
-   //@FXML
-    //private FontAwesomeIcon s3;
+    @FXML
+    private FontAwesomeIcon s3;
 
-    //@FXML
-    //private FontAwesomeIcon s4;
+    @FXML
+    private FontAwesomeIcon s4;
 
-    //@FXML
-    //private FontAwesomeIcon s5;
+    @FXML
+    private FontAwesomeIcon s5;
 
     ArrayList<Movie> movies = (ArrayList<Movie>) DataBase.getInstance().moviesData.getData();
     @FXML
@@ -53,11 +53,11 @@ public class MovieCardController {
     void initialize() {
         movieName.setText(movies.get(cnt).getName(0));
         movieImage.setImage(movies.get(cnt).getImage());
-        //s1.setStroke(Color.GOLD);
-        //s2.setStroke(Color.GOLD);
-        //s3.setStroke(Color.GOLD);
-        //s4.setStroke(Color.GOLD);
-        //s5.setStroke(Color.GOLD);
+        s1.setStroke(Color.GOLD);
+        s2.setStroke(Color.GOLD);
+        s3.setStroke(Color.GOLD);
+        s4.setStroke(Color.GOLD);
+        s5.setStroke(Color.GOLD);
         cnt++;
     }
 

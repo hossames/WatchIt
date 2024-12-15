@@ -4,9 +4,9 @@ import WatchIt.Models.Model;
 import WatchIt.Views.AccountView;
 import WatchIt.Views.AdminView;
 import WatchIt.Views.MainView;
-//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
-//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import javafx.stage.Stage;
 import src.DataBase.DataBase;
 public class Application extends javafx.application.Application {
