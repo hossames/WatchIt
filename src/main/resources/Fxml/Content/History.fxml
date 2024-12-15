@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Fxml.Content.History"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="642.0" prefWidth="936.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.Content.History">
+   <children>
+      <VBox prefHeight="643.0" prefWidth="164.0" style="-fx-background-color: #070807;">
+         <padding>
+            <Insets bottom="50.0" left="10.0" top="10.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/logo.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: F4A005FF;" text="Movies">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: F4A005FF;" text="Series" textAlignment="RIGHT">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Text fill="WHITE" layoutX="172.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Watched Movies :">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="35.0" />
+         </font>
+      </Text>
+      <HBox fx:id="moviesBox" layoutX="172.0" layoutY="71.0" style="-fx-background-color: W #2b2b2bHITE;" />
+      <Text fill="WHITE" layoutX="172.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Watched Series :">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="35.0" />
+         </font>
+      </Text>
+      <HBox fx:id="seriesBox" layoutX="172.0" layoutY="314.0" style="-fx-background-color: W #2b2b2bHITE;" />
+   </children>
 </AnchorPane>

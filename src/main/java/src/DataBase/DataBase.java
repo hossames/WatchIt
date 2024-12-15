@@ -51,7 +51,7 @@ public class DataBase {
     /**
      * Non-Parameterized Constructor that init all Data Objects and Loading Data From Files
      */
-    private DataBase() {
+    public DataBase() {
         // Loading Accounts
         usersData = new DataObjectController<User>("./users.txt","nslw5SWw3oSWSiw2ndW",'U');
         adminsData = new DataObjectController<Admin>("./admins.txt","nslw6SW",'A');

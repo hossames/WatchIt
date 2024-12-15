@@ -72,7 +72,7 @@ public class AccountController {
             }
         }
         catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error Loading Data");
         }
 
     }
