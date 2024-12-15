@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane fx:id="movieCard" prefHeight="159.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Account.Admin.MovieCardController">
+   <children>
+      <Label fx:id="movieName" layoutX="8.0" layoutY="136.0" text="Label" />
+      <HBox alignment="TOP_CENTER" layoutX="8.0" layoutY="123.0">
+         <children>
+            <FontAwesomeIcon fx:id="s1" fontSmoothingType="LCD" glyphName="STAR_ALT" />
+            <FontAwesomeIcon fx:id="s2" glyphName="STAR_ALT" />
+            <FontAwesomeIcon fx:id="s3" glyphName="STAR_ALT" text="" />
+            <FontAwesomeIcon fx:id="s4" glyphName="STAR_ALT" />
+            <FontAwesomeIcon fx:id="s5" glyphName="STAR_ALT" layoutX="44.0" layoutY="20.0" />
+         </children>
+      </HBox>
+      <ImageView fx:id="movieImage" fitHeight="123.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+      <FontAwesomeIcon fill="RED" glyphName="REMOVE" layoutX="73.0" layoutY="18.0" onMouseClicked="#Remove" scaleX="1.5" scaleY="1.5" />
+   </children>
+</AnchorPane>

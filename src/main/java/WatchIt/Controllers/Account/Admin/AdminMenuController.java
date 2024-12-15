@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -34,12 +35,12 @@ public class AdminMenuController {
     }
     @FXML
     void goToMovieController(MouseEvent event) {
-       addToCenter(AdminView.MovieControllerScene());
+       addToCenter(AdminView.MovieControllerScene(AdminView.MovieCardControllerScene()));
     }
 
     @FXML
     void goToSeriesController(MouseEvent event)  {
-      //  addToCenter(AdminView.SeriesControllerScene());
+       //addToCenter(AdminView.AddSeriesScene());
     }
 
     @FXML

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WatchIt.Controllers.Account.Admin.UserController">
    <children>
-      <ListView fx:id="list" prefHeight="680.0" prefWidth="423.0" />
-      <FontAwesomeIcon fill="#72ea10" glyphName="PLUS" layoutX="495.0" layoutY="347.0" onMouseClicked="#addAdmin" scaleX="5.0" scaleY="5.0" text="" wrappingWidth="9.428571701049805" />
-      <FontAwesomeIcon fill="#ff5757" glyphName="REMOVE" layoutX="618.0" layoutY="345.0" onMouseClicked="#removeUser" scaleX="5.0" scaleY="5.0" text="" />
+      <ListView fx:id="listOfUsers" layoutX="10.0" layoutY="102.0" prefHeight="588.0" prefWidth="262.0" />
+      <ListView fx:id="listOfAdmins" layoutX="427.0" layoutY="102.0" prefHeight="588.0" prefWidth="262.0" />
+      <FontAwesomeIcon fill="#72ea10" glyphName="PLUS" layoutX="33.0" layoutY="76.0" onMouseClicked="#addAdmin" scaleX="5.0" scaleY="5.0" text="" wrappingWidth="9.428571701049805" />
+      <FontAwesomeIcon fill="#ff5757" glyphName="REMOVE" layoutX="221.0" layoutY="78.0" onMouseClicked="#removeUser" scaleX="5.0" scaleY="5.0" text="" />
+      <Label layoutX="117.0" layoutY="14.0" text="Users">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="524.0" layoutY="14.0" text="Admins">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <FontAwesomeIcon fill="#ff5757" glyphName="REMOVE" layoutX="552.0" layoutY="76.0" onMouseClicked="#removeAdmin" scaleX="5.0" scaleY="5.0" text="" />
    </children>
 </AnchorPane>
